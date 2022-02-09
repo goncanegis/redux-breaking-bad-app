@@ -1,29 +1,16 @@
 import './App.css';
 import { Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
+import Detail from './components/Detail';
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
+        <Route exact path="/" element={<Home />} />
+        <Route path="/char/:char_id" element={<Detail />} />
       </Routes>
     </div>
-  );
-}
-
-function About() {
-  return (
-    <>
-      <main>
-        <h2>Who are we?</h2>
-        <p>That feels like an existential question, don't you think?</p>
-      </main>
-      <nav>
-        <Link to="/">Home</Link>
-      </nav>
-    </>
   );
 }
 
