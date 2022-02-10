@@ -5,6 +5,7 @@ import { fetchCharacters } from '../redux/charactersSlice';
 import Masonry from 'react-masonry-css';
 import styles from './Home.module.css';
 import Loading from '../components/Loading';
+import Navbar from '../components/Navbar';
 
 const Home = () => {
   const characters = useSelector((state) => state.characters.items);
@@ -26,6 +27,7 @@ const Home = () => {
 
   return (
     <>
+      <Navbar />
       <main>
         <h1>Characters</h1>
         <Masonry
